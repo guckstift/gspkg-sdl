@@ -1,4 +1,4 @@
 
-pkgdeps = [ "sdl" ]
-gspkgdeps = [ "gs" ]
+pkgDeps = [ "sdl" ]
+gspkgDeps = [ "gs" ]
 
