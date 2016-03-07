@@ -1,0 +1,4 @@
+
+pkgdeps = [ "sdl" ]
+gspkgdeps = [ "gs" ]
+
