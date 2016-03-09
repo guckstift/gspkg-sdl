@@ -1,5 +1,4 @@
 
-#include <GL/glew.h>
 #include "glwindow.h"
 #include "sdl.h"
 #include "../gs/utils.h"
@@ -32,14 +31,6 @@ namespace sdl
 			destroy ();
 			return false;
 		}
-	
-		glewExperimental = GL_TRUE;
-		GLenum err = glewInit ();
-	
-		if (err != GLEW_OK) {
-			errLog << "GLEW error: " << glewGetErrorString (err) << nl;
-			return false;
-		}
 		
 		return true;
 	}
@@ -47,6 +38,16 @@ namespace sdl
 	void GlWindow::present ()
 	{
 		SDL_GL_SwapWindow (sdlWnd);
+	}
+	
+	bool GlWindow::makeCurrent ()
+	{
+		if (SDL_GL_MakeCurrent (sdlWnd, sdlGlCtx)) {
+			errLog << "SDL error: " << SDL_GetError () << nl;
+			return false;
+		}
+		
+		return true;
 	}
 }
 

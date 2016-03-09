@@ -16,6 +16,7 @@ namespace sdl
 		bool create (int _glMajorVer, int _glMinorVer, char *_windowTitle = "SDL OpenGL window",
 			vec2 _windowSize = vec2(800, 600));
 		void present ();
+		bool makeCurrent ();
 		
 		int glMajorVer;
 		int glMinorVer;
