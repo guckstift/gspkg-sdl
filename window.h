@@ -2,24 +2,28 @@
 #pragma once
 
 #include <SDL.h>
-#include <glm/fwd.hpp>
-#include <glm/vec2.hpp>
+#include <sdl/events.h>
 
 namespace sdl
 {
-	using glm::vec2;
-	
 	struct Window
 	{
 		Window ();
-		bool create (char *_windowTitle = "SDL window", vec2 _windowSize = vec2(800, 600),
-			bool _glEnabled = false);
+		Window (char *_title, int _width = 800, int _height = 600,
+			int _glMajorVer = 0, int _glMinorVer = 0);
+		bool create (char *_title = "SDL window", int _width = 800, int _height = 600,
+			int _glMajorVer = 0, int _glMinorVer = 0);
 		void destroy ();
-		
-		char *windowTitle;
-		vec2 windowSize;
-		bool glEnabled;
+		void present ();
+		bool makeCurrent ();
+				
+		char *title;
+		int width;
+		int height;
+		int glMajorVer;
+		int glMinorVer;
 		SDL_Window *sdlWnd;
+		SDL_GLContext sdlGlCtx;
 	};
 }
 

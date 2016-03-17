@@ -11,7 +11,7 @@ static bool isInitAudio = false;
 
 namespace sdl
 {
-	bool init ()
+	bool initSdl ()
 	{
 		if (!isInit) {
 			if (SDL_Init (0) != 0) {
@@ -37,7 +37,7 @@ namespace sdl
 	bool initVideo ()
 	{
 		if (!isInit) {
-			init ();
+			initSdl ();
 		}
 		if (!isInitVideo) {
 			if (SDL_InitSubSystem (SDL_INIT_VIDEO) != 0) {
@@ -61,7 +61,7 @@ namespace sdl
 	bool initAudio ()
 	{
 		if (!isInit) {
-			init ();
+			initSdl ();
 		}
 		if (!isInitAudio) {
 			if (SDL_InitSubSystem (SDL_INIT_AUDIO) != 0) {

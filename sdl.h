@@ -1,10 +1,12 @@
 
 #pragma once
 
+#include <SDL.h>
+
 namespace sdl
 {
-	bool init ();
-	void quit ();
+	bool initSdl ();
+	void quitSdl ();
 	bool initVideo ();
 	void quitVideo ();
 	bool initAudio ();
