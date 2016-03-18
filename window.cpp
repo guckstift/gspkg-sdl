@@ -39,6 +39,7 @@ namespace sdl
 		sdlWnd = SDL_CreateWindow (
 			title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
 			width, height, SDL_WINDOW_RESIZABLE | (glMajorVer ? SDL_WINDOW_OPENGL : 0)
+			//width, height, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL
 		);
 
 		if (sdlWnd == NULL) {
